@@ -10,8 +10,7 @@ function getComputerChoice() {
     }
     return cpuRPS;
 }
-getComputerChoice();
-console.log(cpuRPS);
+
 // Prompt for Human's choice //
 function getHumanChoice() {
     huChoice = prompt("0 for Rock, 1 for Paper, 2 for Scissors");
@@ -28,11 +27,11 @@ function getHumanChoice() {
     return huRPS;
 
 } 
-getHumanChoice();
+
 let humanScore = 0;
 let cpuScore = 0; 
 
-
+// Function to play a single round and keep score of it //
 function playRound(huRPS, cpuRPS) {
     let win = 0;
     let lose = 0;
@@ -72,21 +71,29 @@ function playRound(huRPS, cpuRPS) {
         }
     }
     
-    if (win === 1) {
-        humanScore++;
-    } else if (lose === 1 && humanScore > 0) {
-        humanScore--;
-        cpuScore++;
-    } else if (lose === 1) {
-        cpuScore++;
-    }
+    win === 1 ? humanScore++ : cpuScore++;
     
+  console.log("Your score: ", humanScore);
+  console.log("CPU: ", cpuScore);
 }
 
-    
 
-    
-
+// 5 rounds of rock paper scissors //
+getComputerChoice();
+getHumanChoice();
 playRound(huRPS, cpuRPS);
-console.log("Your score: ", humanScore);
-console.log("CPU: ", cpuScore);
+getComputerChoice();
+getHumanChoice();
+playRound(huRPS, cpuRPS);
+getComputerChoice();
+getHumanChoice();
+playRound(huRPS, cpuRPS);
+getComputerChoice();
+getHumanChoice();
+playRound(huRPS, cpuRPS);
+getComputerChoice();
+getHumanChoice();
+playRound(huRPS, cpuRPS);
+
+    
+
